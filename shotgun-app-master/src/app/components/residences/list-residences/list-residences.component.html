@@ -1,0 +1,42 @@
+<span *ngFor="let residence of residencesShotguns"> 
+  <h2>Shotguns pour la résidence {{ residence.name }}</h2>
+  
+    <span *ngFor="let shotg of shotguns ">
+ 
+      <span *ngIf="shotg.shotgunPlace.localisation.name === residence.name" >
+  
+        
+
+        <table  border="1">
+          <thead>
+            <tr>
+              <th>Nom </th>
+              <th>Date de création</th>
+              <th>Date du shotgun</th>
+              <th>Famille</th>
+              <th>Lieu</th>
+              <th>Comments</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              
+              <td>{{ shotg.name }}</td>
+              <td>{{ shotg.shotgunCreationDate | date: "shortDate" }}</td>
+              <td>{{ shotg.shotgunDate | date: "shortDate" }}</td>
+              <td> {{ shotg.shotgunFamille.nomFamille }} </td>
+              <td> {{ shotg.shotgunPlace.name }} ({{
+                shotg.shotgunPlace.localisation.name
+              }}) </td>
+              <td>{{ shotg.shotgunComments }}</td>
+              
+            </tr>
+          </tbody>
+        </table>
+   
+    </span>
+     </span>
+
+ 
+
+</span>
